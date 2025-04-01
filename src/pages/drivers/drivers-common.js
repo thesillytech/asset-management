@@ -1,18 +1,16 @@
 import Header from '../../components/generic/Header.js'
+import Error from '../../components/generic/Error.js'
 import useSWR  from 'swr';
 
 const DriversCommon = () => {
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-    const { data, error } = useSWR('/api/drivers/drivers-common', fetcher)
-
-    // const drivers = data?.results?.map((result) => result).map((data) => console.log('Data', data)) || [];
+    const { data, error } = useSWR('/api/driver/drivers-common', fetcher)
 
     const drivers = data?.results
 
-    if(error) return <div>Failed to Load</div>
+    if(error) return <Error />
     if(!data) return <div>Loading...</div>
-
 
     return (
         <>
