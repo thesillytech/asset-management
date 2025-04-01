@@ -1,4 +1,4 @@
-import { query } from '../../utilities/db.js'
+import { query } from '../../../utilities/db.js'
 
 export default async function handler(req, res) {
 
