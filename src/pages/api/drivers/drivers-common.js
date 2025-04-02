@@ -2,7 +2,7 @@ import { query } from '../../../utilities/db.js'
 
 export default async function handler(req, res) {
 
-    const sql = `select * from public."Drivers_Common"`
+    const sql = `select * from public."Drivers_Common" LIMIT 10`
 
     try {
         const result = await query(sql)
